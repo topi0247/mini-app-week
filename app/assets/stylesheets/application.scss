@@ -1,7 +1,9 @@
 :root {
-  --theme-color1: #fff
-  --bg-color: #fff
-  --text-color: #363636
+  --theme-color1:#faf0e6;
+  --bg-color: #fff;
+  --text-color:  #363636;
+  --form-color: #faf0e6;
+  --form-border-color: #cea780;
 }
 
 /* reset css */
@@ -70,14 +72,45 @@ body,button,input,textarea {
   font:400 1.6rem/calc(1.6rem + 1.05rem) "zen-maru-gothic", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-weight: 400;
   font-style: normal;
+}
+
+a {
+  color: blue;
+}
+
+a.btn,button {
+  padding: 3px 10px;
+  margin: 3px;
+  border: 1px solid var(--form-border-color);
+  border-radius: 8px;
+  background-color: var(--form-color);
+}
+
+form {
+  padding: 30px;
+}
+
+label {
+  display: block;
+  text-align: start;
+}
+
+input {
+  display: block;
+  width: calc(100% - 1.6rem);
+  border: 1px solid #505050;
+  margin-left: 1.6rem;
 }
 
 h1,h2,h3,h4 {
   font-family: zen-kurenaido, sans-serif;
   font-weight: 400;
   font-style: normal;
+
+  a {
+    color: var(--text-color);
+  }
 }
 
 h2 {
@@ -131,7 +164,7 @@ article#index {
     width: calc(25% - 10px);
     margin: 5px;
     position: relative;
-    background-color: #faf0e6;
+    background-color: var(--theme-color1);
     border-radius: 8px;
 
     img {
@@ -165,6 +198,18 @@ article#index {
   }
 }
 
+article#login {
+  margin: 100px;
+
+  section {
+    border: 1px solid #000;
+    padding: 10px;
+    width: 500px;
+    max-width: 90%;
+    margin: auto;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   article#show {
     display: flex;
@@ -178,4 +223,21 @@ article#index {
 
 .text-center {
   text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.block {
+  display: block;
+}
+
+.margin-top{
+  &-5 {
+    margin-top: 5px;
+  }
+  &-10 {
+    margin-top: 10px;
+  }
 }
