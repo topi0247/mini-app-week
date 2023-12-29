@@ -1,0 +1,181 @@
+:root {
+  --theme-color1: #fff
+  --bg-color: #fff
+  --text-color: #363636
+}
+
+/* reset css */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,a::before,a::after,
+button,button::before,button::after,
+input,label:has(input),textarea{
+  transition: all 0.3s;
+}
+
+a,input[type = button],input[type = submit],
+button,button::before,button::after,
+label:has(input[type = checkbox]),label:has(input[type = radio]){
+  cursor: pointer;
+}
+
+input,button{
+  border: none;
+  border: 0;
+}
+
+input,textarea{
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border:2px solid transparent;
+}
+
+input[type=text],textarea {
+  cursor: auto;
+}
+
+p,dl,ul,ol,form{
+  margin: 0;
+  word-wrap: break-word;
+}
+/* ↑reset css */
+
+/* web font
+Zen maru Gothic
+font-family: "zen-maru-gothic", sans-serif;
+font-weight: 400;
+
+bold
+font-weight: 700;
+
+Zen Kurenaido
+font-family: zen-kurenaido, sans-serif;
+font-weight: 400;
+font-style: normal;
+*/
+
+body,button,input,textarea {
+  font:400 1.6rem/calc(1.6rem + 1.05rem) "zen-maru-gothic", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,h2,h3,h4 {
+  font-family: zen-kurenaido, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  display: block;
+  text-align: center;
+  font-size: calc(1.6rem * 3);
+  line-height: calc(1.6rem * 3);
+  span {
+    border-bottom: 2px solid #000;
+  }
+}
+
+h4 {
+  font-size: calc(1.6rem * 2);
+  line-height: calc(1.6rem * 2);
+}
+
+header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  padding: 0 40px;
+  border-bottom: 1px solid #000;
+  justify-content: space-between;
+
+  nav {
+    height: 100%;
+    position: relative;
+
+    ul{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      gap: 10px;
+      list-style: none;
+      padding: 10px;
+    }
+  }
+}
+
+article {
+  margin: 50px auto;
+}
+
+article#index {
+  display: flex;
+  flex-wrap: wrap;
+
+  section {
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    background-color: #faf0e6;
+    border-radius: 8px;
+
+    img {
+      width: 100%;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .content{
+      padding: 10px;
+
+      h4 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      p{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        &.day{
+          text-align: end;
+          ::before{
+            content: "\e8df";
+            font-family: "Material Icons";
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  article#show {
+    display: flex;
+    flex-wrap: wrap;
+
+    section {
+      width: 100%;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
