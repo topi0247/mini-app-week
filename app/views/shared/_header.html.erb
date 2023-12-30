@@ -4,8 +4,9 @@
     <ul>
       <li><%= link_to 'PostsIndex', posts_path %></li>
       <li><%= link_to 'Posts', new_post_path %></li>
-      <li><%= link_to 'MyPage', '#' %></li>
+      <li><%= link_to 'MyPage', user_path(current_user.id) %></li>
       <li><%= link_to 'Logout', logout_path %></li>
     </ul>
   </nav>
 </header>
+<button type="button" id="sp-menu"></button>

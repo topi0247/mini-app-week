@@ -71,6 +71,7 @@ group :test do
 end
 
 gem 'sentry-ruby'
+
 gem 'sentry-rails'
 
 gem 'dartsass-rails', '~> 0.5.0'
@@ -78,3 +79,5 @@ gem 'dartsass-rails', '~> 0.5.0'
 gem 'sorcery'
 
 gem 'carrierwave'
+
+gem "jquery-rails"

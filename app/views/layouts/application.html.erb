@@ -9,7 +9,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Round" rel="stylesheet">
     <script>
       (function(d) {
         var config = {
@@ -23,11 +23,12 @@
   </head>
 
   <body>
-  <% if logged_in? %>
-    <%= render 'shared/header' %>
-  <% else %>
-    <%= render 'shared/before_header' %>
-  <% end %>
+    <% if logged_in? %>
+      <%= render 'shared/header' %>
+    <% else %>
+      <%= render 'shared/before_header' %>
+    <% end %>
     <%= yield %>
+    <%= render 'shared/footer' %>
   </body>
 </html>

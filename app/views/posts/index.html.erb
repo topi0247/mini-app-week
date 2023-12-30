@@ -1,11 +1,11 @@
 <h2><span>Log</span></h2>
-<article id="index">
+<article id="index" class="row_show">
   <% if @posts.present? %>
     <%= render @posts %>
   <% else %>
   <div class="margin-auto texe-center">
     <p class="text-center">No Post Data<br/>
-      <%= link_to "Let's Post Start!! ", '/posts/new' %>
+      <%= link_to "Let's Post Start!! ", new_post_path %>
     </p>
   </div>
   <% end %>

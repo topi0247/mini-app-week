@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'login' => 'user_sessions#create'
   get 'logout' => 'user_sessions#destroy'
   get 'about' => 'static_pages#about'
-  resources :users, only: %i[new create]
+  get 'test' => 'users#test', defaults: { format: :json }
+  resources :users
   resources :posts
 end

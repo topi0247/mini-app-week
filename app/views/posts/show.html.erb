@@ -1,0 +1,10 @@
+<article>
+  <h3><%= @post.title %></h3>
+  <section class="show">
+    <%= image_tag @post.photo.url %>
+    <div class="bodys">
+      <p class="day"><%= link_to @post.created_at %></p>
+      <p><%= @post.body %></p>
+    </div>
+  </section>
+</article>
