@@ -1,7 +1,7 @@
 <h2><span>Log</span></h2>
 <article id="index">
   <% if @posts.present? %>
-    <%= render 'post' %>
+    <%= render @posts %>
   <% else %>
   <div class="margin-auto texe-center">
     <p class="text-center">No Post Data<br/>

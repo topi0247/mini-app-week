@@ -76,3 +76,5 @@ gem 'sentry-rails'
 gem 'dartsass-rails', '~> 0.5.0'
 
 gem 'sorcery'
+
+gem 'carrierwave'

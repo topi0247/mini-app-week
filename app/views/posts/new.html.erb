@@ -1,14 +1,20 @@
 <article id="post-new">
   <h2><span>Post</span></h2>
   <section>
-    <%= form_with model: @post, url: '/posts/create' do |f| %>
+    <%= form_with model: @post do |f| %>
+      <div>
+        <%= f.label :photo %>
+        <%= image_tag(@post.photo.url) if @post.photo? %>
+        <%= f.file_field :photo %>
+        <%= f.hidden_field :photo_cache %>
+      </div>
       <div>
         <%= f.label :title %>
-        <%= f.text_field :title, value: @post.title %>
+        <%= f.text_field :title %>
       </div>
       <div>
         <%= f.label :body %>
-        <%= f.text_area :body, value: @post.body %>
+        <%= f.text_area :body %>
       </div>
       <div class="block text-center">
         <%= f.submit 'send' %>

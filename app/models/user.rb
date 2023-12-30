@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
-  has_many :board, dependent: :destroy
+  has_many :post, dependent: :destroy
   validates :last_name, presence: true, length: { maximum: 255 }
   validates :first_name, presence: true, length: { maximum: 255 }
   validates :nickname, presence: true, length: { maximum: 255 }
