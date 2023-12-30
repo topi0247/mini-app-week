@@ -1,0 +1,37 @@
+<article id="signup">
+  <h2>SignUp</h2>
+  <section>
+  <%= form_with model: @user do |f| %>
+      <div>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, vlaue: @user.last_name %>
+      </div>
+      <div>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, value: @user.first_name %>
+      </div>
+      <div>
+        <%= f.label :nickname %>
+        <%= f.text_field :nickname, value: @user.nickname %>
+      </div>
+      <div>
+        <%= f.label :email %>
+        <%= f.email_field :email, value: @user.email %>
+      </div>
+      <div>
+        <%= f.label :password %>
+        <%= f.password_field :password, value: @user.password %>
+      </div>
+      <div>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <div class="block text-center margin-top-10">
+        <%= f.submit 'send' %>
+      </div>
+    <% end %>
+    <div class="block text-center">
+      <%= link_to 'Login', login_path %>
+    </div>
+  </section>
+</article>

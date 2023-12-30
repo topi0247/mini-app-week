@@ -79,13 +79,19 @@ a {
   color: blue;
 }
 
-a.btn,button {
-  padding: 3px 10px;
-  margin: 3px;
-  border: 1px solid var(--form-border-color);
-  border-radius: 8px;
-  background-color: var(--form-color);
+input[type=submit],input[type=button]{
+  width: auto;
+  display: inline-block;
 }
+
+// a.btn,button,input[type=submit] {
+//   width: auto;
+//   padding: 3px 10px;
+//   margin: 3px;
+//   border: 1px solid var(--form-border-color);
+//   border-radius: 8px;
+//   background-color: var(--form-color);
+// }
 
 form {
   padding: 30px;
@@ -198,7 +204,7 @@ article#index {
   }
 }
 
-article#login {
+article#login,article#signup {
   margin: 100px;
 
   section {
@@ -207,6 +213,10 @@ article#login {
     width: 500px;
     max-width: 90%;
     margin: auto;
+  }
+
+  form > div {
+    margin: 15px auto;
   }
 }
 
