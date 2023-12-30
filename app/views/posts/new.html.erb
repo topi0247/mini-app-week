@@ -1,0 +1,18 @@
+<article id="post-new">
+  <h2><span>Post</span></h2>
+  <section>
+    <%= form_with model: @post, url: '/posts/create' do |f| %>
+      <div>
+        <%= f.label :title %>
+        <%= f.text_field :title, value: @post.title %>
+      </div>
+      <div>
+        <%= f.label :body %>
+        <%= f.text_area :body, value: @post.body %>
+      </div>
+      <div class="block text-center">
+        <%= f.submit 'send' %>
+      </div>
+    <% end %>
+  </section>
+</article>
