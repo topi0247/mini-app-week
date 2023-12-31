@@ -1,11 +1,12 @@
+<% content_for(:title, t('.title')) %>
 <article id="user-show-<%= @user.id%>" class = "user_show">
-  <h2><span>マイページ編集</span></h2>
+  <h2><span><%= t('.title') %></span></h2>
     <%= form_with model: @user do |f| %>
       <section>
           <div class="icon sp-center text-center margin-auto">
-            <%= f.label :avatar do %>
+            <%= f.label :avatar, id: 'avater_label' do %>
               <span class="filelabel" title="file select">
-                <%= image_tag @user.avatar.url, class: 'avatar-icon' %>
+                <%= image_tag @user.avatar.url, class: 'avatar-icon', id: 'avatar_prev' %>
                 <span class="camera"></span>
               </span>
               <%= f.file_field :avatar, accept: 'image/*' %>

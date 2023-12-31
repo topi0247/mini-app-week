@@ -23,8 +23,10 @@ ja:
       signin: 新規登録
       to_login_page: ログインはこちら
     show:
-      title: "#{nickname}さんのページ"
+      title: マイページ
       to_edit: 編集
+    edit:
+      title: マイページ編集
   header:
     logout: ログアウト
     post: 投稿
