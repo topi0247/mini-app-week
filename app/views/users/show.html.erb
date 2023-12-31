@@ -1,12 +1,17 @@
 <article id="user-show-<%= @user.id%>" class = "user_show">
   <h2><span>My Page</span></h2>
-  <section class="flex sp-block sp-center">
-    <div class="sp-center text-center">
-      <%= image_tag '/assets/avatar.png', class: 'avatar-icon' %>
+  <section class="profile sp-block sp-center">
+    <div class="icon sp-center text-center">
+      <%= image_tag :avatar, class: 'avatar-icon' %>
     </div>
-    <div class="margin-left-30 sp-center">
-      <p>sample text sample text sample text sample text sample text sample text sample text sample textsample text sample text sample text sample text</p>
-      <div class="text-right"><p><a>Link</a></p></div>
+    <div class="body sp-center">
+      <h4><%= @user.decorate.full_name %></h4>
+      <p><%= @user.profile || "no profile" %></p>
+      <% if @user == current_user %>
+      <div class="text-right">
+        <p><%= link_to 'edit', edit_user_path %></p>
+      </div>
+      <% end %>
     </div>
   </section>
     <div class="row_show">

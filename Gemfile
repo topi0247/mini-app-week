@@ -81,3 +81,7 @@ gem 'sorcery'
 gem 'carrierwave'
 
 gem "jquery-rails"
+
+gem 'dotenv'
+
+gem 'draper'

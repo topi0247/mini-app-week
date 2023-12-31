@@ -1,7 +1,7 @@
 <article id="login">
 <h2>Login</h2>
   <section>
-    <%= form_with url: login_path do |f| %>
+    <%= form_with id: 'login', remote: true do |f| %>
     <form>
       <div>
         <%= f.label :email %>
