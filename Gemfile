@@ -91,3 +91,5 @@ gem 'sass-rails'
 gem 'turbolinks'
 
 gem 'rails-i18n'
+
+gem 'carrierwave-i18n'

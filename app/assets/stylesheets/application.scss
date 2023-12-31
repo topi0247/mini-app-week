@@ -419,6 +419,21 @@ img.avatar-icon {
   opacity: 0.5;
 }
 
+.require:after {
+  content: "*";
+  color: red;
+}
+
+.error{
+  background-color: rgba(255, 0, 0, 0.164);
+  padding: 10px;
+  border: 1px solid red;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -488,6 +503,10 @@ footer {
 
   &-30 {
     margin-left: 30px;
+  }
+
+  &-1_6 {
+    margin-left: 1.6rem;
   }
 }
 

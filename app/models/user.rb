@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
-  has_many :post, dependent: :destroy
+  has_many :posts, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
   validates :last_name, presence: true, length: { maximum: 255 }
   validates :first_name, presence: true, length: { maximum: 255 }

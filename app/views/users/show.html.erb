@@ -19,7 +19,7 @@
     </div>
   </section>
     <div class="row_show">
-      <% @user.post.each do |post| %>
+      <% @user.posts.each do |post| %>
           <section class="margin-top-10 content">
             <%= link_to post_path(post.id) do %>
               <%= image_tag post.photo.url, alt: post.title %>
@@ -27,7 +27,7 @@
             <div class="body">
               <h4><%= link_to post.title, post_path(post.id) %></h4>
               <%= simple_format post.body %>
-              <%= simple_format t(post.created_at, :long), class: 'day' %>
+              <%= simple_format l(post.created_at, format: :long), class: 'day' %>
             </div>
           </section>
       <% end %>
