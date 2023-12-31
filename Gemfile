@@ -85,3 +85,5 @@ gem "jquery-rails"
 gem 'dotenv'
 
 gem 'draper'
+
+gem 'sass-rails'

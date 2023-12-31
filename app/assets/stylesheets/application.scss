@@ -16,6 +16,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -211,6 +215,7 @@ header {
   padding: 0 40px;
   border-bottom: 1px solid #000;
   justify-content: space-between;
+  margin: 8px 8px 0 8px;
 
   nav {
     height: 100%;
@@ -237,6 +242,34 @@ article {
     width: 500px;
     max-width: 90%;
     margin: auto;
+  }
+}
+
+#top {
+  margin: 0;
+  width: 100%;
+  height: calc(100vh - 88px);
+  .bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 88px;
+    opacity: 0.6;
+    z-index: -1;
+  }
+
+  .content{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateY(-55%) translateX(-50%);
+    -webkit-transform: translateY(-55%) translateX(-50%);
+    background-color: #ffffffa1;
+    padding: 0 50px 50px;
+    p{
+      font-size: calc(1.6rem * 1.5);
+      line-height: calc(1.6rem * 1.5 + 1.05rem);
+    }
   }
 }
 
