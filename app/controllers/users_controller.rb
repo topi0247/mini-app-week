@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
       login(@user.email, @user.password)
-      redirect_to post_path
+      redirect_to posts_path
     else
       render 'new', status: :unprocessable_entity
     end

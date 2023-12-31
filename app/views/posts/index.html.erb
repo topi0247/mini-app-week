@@ -1,11 +1,11 @@
-<h2><span>一覧</span></h2>
+<h2><span><%= t('.title') %></span></h2>
 <article id="index" class="row_show">
   <% if @posts.present? %>
     <%= render @posts %>
   <% else %>
   <div class="margin-auto texe-center">
-    <p class="text-center">まだ投稿されてないようです<br/>
-      <%= link_to "さっそく投稿しましょう！", new_post_path %>
+    <p class="text-center"><%= t('.no_post_comment') %><br/>
+      <%= link_to t('.require_post'), new_post_path %>
     </p>
   </div>
   <% end %>

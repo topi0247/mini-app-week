@@ -1,0 +1,47 @@
+ja:
+  helpers:
+    submit:
+      post: 投稿
+      create: 登録
+      submit: 保存
+      update: 更新
+      login: ログイン
+    label:
+      email: メールアドレス
+      password: パスワード
+      title: タイトル
+      body: 本文
+  user_sessions:
+    new:
+      title: ログイン
+      login: ログイン
+      signin: 新規登録
+      to_signin_page: 新規登録はこちら
+  users:
+    new:
+      title: 新規登録
+      signin: 新規登録
+      to_login_page: ログインはこちら
+    show:
+      title: "#{nickname}さんのページ"
+      to_edit: 編集
+  header:
+    logout: ログアウト
+    post: 投稿
+    post_index: 一覧
+    create_post: アルバム作成
+    mypage: マイページ
+  posts:
+    new:
+      title: アルバム作成
+    show:
+      title: アルバム詳細
+      delete: 削除
+    index:
+      title: アルバム一覧
+      no_post_comment: まだ投稿されてないようです
+      require_post: さっそく投稿しましょう！
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%Y/%m/%d %h:%m"

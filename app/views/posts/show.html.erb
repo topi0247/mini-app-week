@@ -3,10 +3,12 @@
     <%= image_tag @post.photo.url %>
     <div class="bodys">
       <h3><%= @post.title %></h3>
-      <%= simple_format @post.created_at.to_s, class: 'day' %>
+      <%= simple_format l(@post.created_at,format: :long), class: 'day' %>
       <%= simple_format @post.body %>
       <% if @post.user == current_user %>
-        <%= link_to '削除', @post, data: { turbo_method: :delete } %>
+        <div class="text-right">
+          <%= link_to t('.delete'), @post, data: { turbo_method: :delete } %>
+        </div>
       <% end %>
     </div>
     <%= image_tag 'tape', class: 'tape' %>

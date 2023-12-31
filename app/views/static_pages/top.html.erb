@@ -4,8 +4,8 @@
     <h2>お子さんの「はじめて」<br/>記録しませんか？</h2>
     <%= simple_format '「ひとときアルバム」は<br/>はじめて立った、はじめて食べた、などなど<br/>成長の早いお子さんのひとときを<br/>アルバムにするアプリです。' %>
     <div class="text-center margin-top-10">
-        <%= link_to '登録', new_user_path %>
-        <%= link_to 'ログイン', login_path %>
+        <%= link_to t('user_sessions.new.signin'), new_user_path %>
+        <%= link_to t('user_sessions.new.login'), login_path %>
     </div>
   </div>
 </article>

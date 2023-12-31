@@ -1,5 +1,6 @@
+<% content_for(:title, t('.title')) %>
 <article id="signup">
-  <h2>SignUp</h2>
+  <h2><%= t('.title') %></h2>
   <section>
   <%= form_with model: @user do |f| %>
       <div>
@@ -27,11 +28,11 @@
         <%= f.password_field :password_confirmation %>
       </div>
       <div class="block text-center margin-top-10">
-        <%= f.submit '登録' %>
+        <%= f.submit t('.signin') %>
       </div>
     <% end %>
     <div class="block text-center">
-      <%= link_to 'ログインはこちら', login_path %>
+      <%= link_to  t('.to_login_page'), login_path %>
     </div>
   </section>
 </article>

@@ -1,18 +1,19 @@
+<% content_for(:title, "#{@user.nickname}さんのページ") %>
 <article id="user-show-<%= @user.id%>" class = "user_show">
-  <h2><span>My Page</span></h2>
+  <h2><span><%= "#{@user.nickname}さんのページ" %></span></h2>
   <section class="profile">
     <div class="icon">
-      <%= image_tag :avatar, class: 'avatar-icon' %>
+      <%= image_tag @user.avatar.url, class: 'avatar-icon' %>
     </div>
     <div class="body">
       <div class="text-center">
         <h4><%= @user.nickname %></h4>
-        <p><%= @user.decorate.full_name %></p>
+        <%= simple_format @user.decorate.full_name %>
       </div>
       <p><%= @user.profile || "no profile" %></p>
       <% if @user == current_user %>
       <div class="text-right">
-        <p><%= link_to 'edit', edit_user_path %></p>
+        <p><%= link_to t('.to_edit'), edit_user_path %></p>
       </div>
       <% end %>
     </div>
@@ -25,8 +26,8 @@
             <% end %>
             <div class="body">
               <h4><%= link_to post.title, post_path(post.id) %></h4>
-              <p><%= post.body %></p>
-              <p class="day"><a><%= post.created_at %></a></p>
+              <%= simple_format post.body %>
+              <%= simple_format t(post.created_at, :long), class: 'day' %>
             </div>
           </section>
       <% end %>

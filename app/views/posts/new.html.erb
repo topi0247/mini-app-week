@@ -1,5 +1,6 @@
+<% content_for(:title, t('.title')) %>
 <article id="post-new">
-  <h2><span>投稿画面</span></h2>
+  <h2><span><%= t('.title') %></span></h2>
   <section>
     <%= form_with model: @post do |f| %>
       <div>
@@ -17,7 +18,7 @@
         <%= f.text_area :body %>
       </div>
       <div class="block text-center">
-        <%= f.submit '投稿' %>
+        <%= f.submit t('helpers.submit.post') %>
       </div>
     <% end %>
   </section>

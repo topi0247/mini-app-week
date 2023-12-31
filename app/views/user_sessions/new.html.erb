@@ -1,5 +1,6 @@
+<% content_for(:title, t('.title')) %>
 <article id="login">
-<h2>Login</h2>
+<h2><%= t('.title') %></h2>
   <section>
     <%= form_with id: 'login', remote: true do |f| %>
     <form>
@@ -12,12 +13,12 @@
         <%= f.password_field :password %>
       </div>
       <div class="block text-center margin-top-10">
-        <%= f.submit 'ログイン'%>
+        <%= f.submit t('.login') %>
       </div>
     </form>
     <% end %>
     <div class="block text-center">
-      <%= link_to '新規登録はこちら', new_user_path %> / <a>Forgot Password</a>
+      <%= link_to t('.to_signin_page'), new_user_path %>
     </div>
   </section>
 </article>
