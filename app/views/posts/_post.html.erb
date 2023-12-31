@@ -1,8 +1,11 @@
   <section class="content">
-    <a><img src="<%= post.photo.url%>"></a>
+    <%= link_to post_path(post.id) do %>
+      <%= image_tag post.photo.url %>
+    <% end %>
     <div class="body">
-      <h4><a><%= post.title %></a></h4>
-      <p><%= post.body %></p>
-      <p class="day"><a><%= post.created_at %></a></p>
+      <h4><%= link_to post.title, post_path(post.id) %></h4>
+      <%= simple_format post.body %>
+      <%= simple_format post.created_at.to_s, class: 'day' %>
     </div>
+    <%= image_tag 'tape', class: 'tape' %>
   </section>

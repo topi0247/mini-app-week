@@ -87,3 +87,7 @@ gem 'dotenv'
 gem 'draper'
 
 gem 'sass-rails'
+
+gem 'turbolinks'
+
+gem 'rails-i18n'

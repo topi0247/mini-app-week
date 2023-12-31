@@ -25,20 +25,18 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by(id: params[:id])
-    # カリキュラムを進める
-    # @user.last_name = params[:last_name]
+    @user = current_user
 
-    # if @user.save
-    #   redirect_to users_path(id: params[:id])
-    # else
-    #   render 'edit', status: :unprocessable_entity
-    # end
+    if @user.update(user_params)
+      redirect_to user_path(id: params[:id])
+    else
+      render 'edit', status: :unprocessable_entity
+    end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:last_name, :first_name, :nickname, :email, :password, :password_confirmation, :avatar, :avatar_cache) # rubocop:disable Layout/LineLength
+    params.require(:user).permit(:last_name, :first_name, :nickname, :profile, :email, :password, :password_confirmation, :avatar, :avatar_cache) # rubocop:disable Layout/LineLength
   end
 end

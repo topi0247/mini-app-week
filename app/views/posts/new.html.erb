@@ -1,5 +1,5 @@
 <article id="post-new">
-  <h2><span>Post</span></h2>
+  <h2><span>投稿画面</span></h2>
   <section>
     <%= form_with model: @post do |f| %>
       <div>
@@ -17,7 +17,7 @@
         <%= f.text_area :body %>
       </div>
       <div class="block text-center">
-        <%= f.submit 'send' %>
+        <%= f.submit '投稿' %>
       </div>
     <% end %>
   </section>

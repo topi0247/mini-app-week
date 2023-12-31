@@ -1,11 +1,14 @@
 <article id="user-show-<%= @user.id%>" class = "user_show">
   <h2><span>My Page</span></h2>
-  <section class="profile sp-block sp-center">
-    <div class="icon sp-center text-center">
+  <section class="profile">
+    <div class="icon">
       <%= image_tag :avatar, class: 'avatar-icon' %>
     </div>
-    <div class="body sp-center">
-      <h4><%= @user.decorate.full_name %></h4>
+    <div class="body">
+      <div class="text-center">
+        <h4><%= @user.nickname %></h4>
+        <p><%= @user.decorate.full_name %></p>
+      </div>
       <p><%= @user.profile || "no profile" %></p>
       <% if @user == current_user %>
       <div class="text-right">
@@ -18,7 +21,7 @@
       <% @user.post.each do |post| %>
           <section class="margin-top-10 content">
             <%= link_to post_path(post.id) do %>
-              <%= image_tag post.photo.url, alt: 'sample' %>
+              <%= image_tag post.photo.url, alt: post.title %>
             <% end %>
             <div class="body">
               <h4><%= link_to post.title, post_path(post.id) %></h4>

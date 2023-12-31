@@ -1,18 +1,23 @@
 <article id="user-show-<%= @user.id%>" class = "user_show">
-  <h2><span>My Page Edit</span></h2>
+  <h2><span>マイページ編集</span></h2>
     <%= form_with model: @user do |f| %>
-      <section class="">
+      <section>
           <div class="icon sp-center text-center margin-auto">
             <%= f.label :avatar do %>
               <span class="filelabel" title="file select">
                 <%= image_tag @user.avatar.url, class: 'avatar-icon' %>
                 <span class="camera"></span>
               </span>
-              <%= f.file_field :avatar, accept: 'image/*', style: 'display: none' %>
-              <%= f.hidden_field :avatar_cashe %>
+              <%= f.file_field :avatar, accept: 'image/*' %>
+              <%= f.hidden_field :avatar_cache %>
             <% end %>
           </div>
           <div class="body sp-center">
+            <div class="profile-edit">
+              <%= f.label :nickname %>
+              <%= f.text_field :nickname %>
+            </div>
+
             <div class="profile-edit">
               <%= f.label :last_name %>
               <%= f.text_field :last_name %>
@@ -28,7 +33,7 @@
             </div>
           </div>
           <div class="block text-center margin-top-10">
-            <%= f.submit 'update' %>
+            <%= f.submit '更新' %>
           </div>
       </section>
     <% end %>

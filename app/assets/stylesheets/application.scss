@@ -97,7 +97,7 @@ button,
 input,
 textarea {
   font: 400 1.6rem/calc(1.6rem + 1.05rem) "zen-maru-gothic", sans-serif;
-  background-color: var(--bg-color);
+  background-color: var(--theme-color1);
   color: var(--text-color);
   font-style: normal;
 }
@@ -216,10 +216,14 @@ header {
   border-bottom: 1px solid #000;
   justify-content: space-between;
   margin: 8px 8px 0 8px;
+  h1 {
+    width: 50%;
+  }
 
   nav {
     height: 100%;
     position: relative;
+    width: 50%;
 
     ul {
       position: absolute;
@@ -253,7 +257,6 @@ article {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 88px;
     opacity: 0.6;
     z-index: -1;
   }
@@ -282,14 +285,13 @@ article {
 
 section.show {
   position: relative;
-  background-color: var(--theme-color1);
-  border-radius: 8px;
   padding: 0;
+  padding: 10px;
+  background-color: white;
 
   img {
     width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    aspect-ratio: unset;
   }
 
   p {
@@ -299,22 +301,32 @@ section.show {
       padding-right: 0;
     }
   }
+
+  .tape {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateY(-5px) translateX(-50%);
+    -webkit-transform: translateY(-5px) translateX(-50%);
+    width: 130px;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: unset;
+  }
 }
 
 section.content {
   width: calc(25% - 10px);
   margin: 5px;
   position: relative;
-  background-color: var(--theme-color1);
-  border-radius: 8px;
   padding: 0;
   border: none;
+  padding: 10px;
+  background-color: white;
 
   img {
     width: 100%;
     height: 200px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
   }
 
   .body {
@@ -326,6 +338,15 @@ section.content {
       white-space: nowrap;
       position: relative;
     }
+  }
+
+  .tape {
+    position: absolute;
+    top: -65px;
+    left: 85px;
+    width: 130px;
+    height: auto;
+    object-fit: contain;
   }
 }
 
@@ -340,10 +361,11 @@ img.avatar-icon {
 }
 
 .profile {
-  display: flex;
+  padding: 20px;
+  .icon {
+    margin: auto;
+  }
   .body {
-    width: calc(100% - 130px);
-    margin-left: 30px;
     text-align: start;
   }
 
@@ -364,6 +386,10 @@ img.avatar-icon {
 
 .icon{
   width: 100px;
+}
+
+#user_avatar {
+  display: none;
 }
 
 .filelabel {

@@ -2,13 +2,12 @@
 <html>
   <head>
     <meta http-equiv="Cache-Control" content="no-cache">
-    <title>Mini App Week</title>
+    <title>ひとときアルバム</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Round" rel="stylesheet">
     <script>
       (function(d) {
@@ -25,10 +24,10 @@
   <body>
     <% if logged_in? %>
       <%= render 'shared/header' %>
-    <% else %>
-      <%= render 'shared/before_header' %>
     <% end %>
     <%= yield %>
     <%= render 'shared/footer' %>
+
+    <%= javascript_importmap_tags %>
   </body>
 </html>
