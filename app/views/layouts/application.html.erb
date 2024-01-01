@@ -11,6 +11,7 @@
     <%= javascript_importmap_tags %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script>
       (function(d) {
         var config = {
@@ -27,7 +28,9 @@
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% end %>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
 
   </body>
 </html>

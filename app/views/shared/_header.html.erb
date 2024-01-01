@@ -2,10 +2,18 @@
   <h1><%= link_to 'ひとときアルバム', posts_path %></h1>
   <nav>
     <ul>
-      <li><%= link_to t('header.post_index'), posts_path %></li>
-      <li><%= link_to t('header.post'), new_post_path %></li>
-      <li><%= link_to t('header.mypage'), user_path(current_user.id) %></li>
-      <li><%= link_to t('header.logout'), logout_path %></li>
+      <li><%= link_to posts_path do %>
+        <span class="material-symbols-outlined">photo_library</span>
+        <% end %></li>
+      <li><%= link_to new_post_path do %>
+        <span class="material-symbols-outlined">add_a_photo</span>
+        <% end %></li>
+      <li><%= link_to user_path(current_user.id) do %>
+        <span class="material-symbols-outlined">account_circle</span>
+        <% end %></li>
+      <li><%= link_to logout_path do %>
+        <span class="material-symbols-outlined">logout</span>
+        <% end %></li>
     </ul>
   </nav>
 </header>

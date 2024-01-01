@@ -102,6 +102,10 @@ textarea {
   font-style: normal;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 a {
   color: blue;
 }
@@ -173,6 +177,10 @@ h4 {
   line-height: calc(1.6rem * 2);
   margin-top: 5px;
   margin-bottom: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
 }
 
 /* Google icon */
@@ -252,7 +260,7 @@ article {
 #top {
   margin: 0;
   width: 100%;
-  height: calc(100vh - 88px);
+  height: 100vh;
   .bg{
     position: absolute;
     width: 100%;
@@ -304,10 +312,10 @@ section.show {
 
   .tape {
     position: absolute;
-    top: -5px;
+    top: -14px;
     left: 50%;
-    transform: translateY(-5px) translateX(-50%);
-    -webkit-transform: translateY(-5px) translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
     width: 130px;
     height: auto;
     object-fit: contain;
@@ -323,6 +331,7 @@ section.content {
   border: none;
   padding: 10px;
   background-color: white;
+  box-shadow: 5px 5px 10px #3d3d3d8e;
 
   img {
     width: 100%;
@@ -331,6 +340,10 @@ section.content {
 
   .body {
     padding: 5px 15px;
+
+    h4 {
+      text-align: center;
+    }
 
     p {
       text-overflow: ellipsis;
@@ -342,11 +355,14 @@ section.content {
 
   .tape {
     position: absolute;
-    top: -65px;
-    left: 85px;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
     width: 130px;
     height: auto;
     object-fit: contain;
+    aspect-ratio: unset;
   }
 }
 
@@ -419,6 +435,12 @@ img.avatar-icon {
   opacity: 0.5;
 }
 
+#photo-prev {
+  img {
+    object-fit: contain;
+  }
+}
+
 .require:after {
   content: "*";
   color: red;
@@ -441,14 +463,47 @@ footer {
 }
 
 @media only screen and (max-width: 800px) {
+  h2 {
+    font-size: calc(1.6rem * 2);
+  }
+
+  main {
+    margin-top: 40px;
+    margin-bottom: 100px;
+  }
+
   header {
     display: block;
     text-align: center;
     height: 40px;
     z-index: 0;
 
+    h1 {
+      width: 100%;
+    }
+
     nav {
-      display: none;
+      position: fixed;
+      width: 100%;
+      height: 50px;
+      left: 0;
+      bottom: 0;
+      z-index: 10;
+      background-color: var(--theme-color1);
+      margin: 0;
+      border-top: 1px solid #33333328;
+    }
+
+    ul {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      li {
+        width: calc(100% / 4);
+      }
+      li+ li {
+        border-left: 1px solid #33333328;
+      }
     }
   }
 
@@ -462,10 +517,25 @@ footer {
 
   .row_show {
     display: block;
+  }
 
-    section {
-      width: 100%;
-      margin-top: 25px;
+  section.content {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  #top {
+    height: 100vh;
+    .bg {
+      top: 0;
+    }
+
+    .content {
+      position: relative;
+      padding: 10px;
+      p {
+        font-size: 1.6rem;
+      }
     }
   }
 }

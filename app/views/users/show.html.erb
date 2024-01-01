@@ -13,7 +13,9 @@
       <p><%= @user.profile || "no profile" %></p>
       <% if @user == current_user %>
       <div class="text-right">
-        <p><%= link_to t('.to_edit'), edit_user_path %></p>
+        <p><%= link_to edit_user_path do %>
+          <span class="material-symbols-outlined">edit_note</span>
+          <% end %></p>
       </div>
       <% end %>
     </div>
@@ -29,6 +31,7 @@
               <%= simple_format post.body %>
               <%= simple_format l(post.created_at, format: :long), class: 'day' %>
             </div>
+            <%= image_tag 'tape', class: 'tape' %>
           </section>
       <% end %>
     </div>
