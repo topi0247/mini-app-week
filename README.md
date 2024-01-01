@@ -1,24 +1,9 @@
-# README
+# ひとときアルバム
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サービス概要
+お子さんの「はじめて」を写真に残す写真記録サービスです。
 
-Things you may want to cover:
+## 想定されるユーザー層
+お子さんが生まれたばかりの親御さんで写真記録を残したい方。
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

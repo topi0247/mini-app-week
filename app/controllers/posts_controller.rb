@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(id: params[:id])
+      @post = Post.find_by(id: params[:id])
   end
 
   def edit
@@ -45,6 +45,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :photo, :photo_cache)
+    params.require(:post).permit(:title, :body, :photo, :photo_cache, :is_public)
   end
 end

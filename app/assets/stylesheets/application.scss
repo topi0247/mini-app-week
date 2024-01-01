@@ -110,12 +110,6 @@ a {
   color: blue;
 }
 
-input[type=submit],
-input[type=button] {
-  width: auto;
-  display: inline-block;
-}
-
 form {
   padding: 30px;
 
@@ -135,6 +129,17 @@ textarea {
   width: calc(100% - 1.6rem);
   border: 1px solid #505050;
   margin-left: 1.6rem;
+}
+
+input[type=submit],
+input[type=button],
+input[type=checkbox] {
+  width: auto;
+  display: inline-block;
+}
+
+input[type=checkbox] {
+  display: none;
 }
 
 img {
@@ -438,12 +443,54 @@ img.avatar-icon {
 #photo-prev {
   img {
     object-fit: contain;
+    aspect-ratio: unset;
   }
 }
 
 .require:after {
   content: "*";
   color: red;
+}
+
+#post_public_label {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 30px;
+  position: relative;
+  width: auto;
+}
+
+#post_public_label::before {
+  background: #fff;
+  border: 1px solid #231815;
+  content: '';
+  display: block;
+  height: 16px;
+  left: 5px;
+  margin-top: -8px;
+  position: absolute;
+  top: 50%;
+  width: 16px;
+}
+
+#post_public_label::after {
+  border-right: 3px solid #ed7a9c;
+  border-bottom: 3px solid #ed7a9c;
+  content: '';
+  display: block;
+  height: 9px;
+  left: 10px;
+  margin-top: -7px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  width: 5px;
+}
+
+input[type=checkbox]:checked +#post_public_label::after {
+  opacity: 1;
 }
 
 .error{

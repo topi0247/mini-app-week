@@ -5,4 +5,8 @@ class Post < ApplicationRecord
   validates :photo, presence: true
   validates :title, presence: true, length: { maximum: 255 }
   validates :body, length: { maximum: 10_000 }
+
+  def is_public?
+    self.is_public
+  end
 end
