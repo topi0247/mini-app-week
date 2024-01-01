@@ -3,6 +3,7 @@
   <h2><span><%= t('.title') %></span></h2>
     <%= form_with model: @user do |f| %>
       <section>
+          <%= render 'shared/error_messages', object: f.object %>
           <div class="icon sp-center text-center margin-auto">
             <%= f.label :avatar, id: 'avater_label' do %>
               <span class="filelabel" title="file select">
