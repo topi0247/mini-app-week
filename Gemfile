@@ -93,3 +93,7 @@ gem 'turbolinks'
 gem 'rails-i18n'
 
 gem 'carrierwave-i18n'
+
+gem 'aws-sdk-s3', require: false
+
+gem 'fog-aws'
