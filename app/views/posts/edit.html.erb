@@ -1,0 +1,29 @@
+<% content_for(:title, t('.title')) %>
+<article id="post-new">
+  <h2><span><%= t('.title') %></span></h2>
+  <section>
+    <%= form_with model: @post do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div>
+        <div id="photo-prev">
+          <%= image_tag(@post.photo.url) if @post.photo? %>
+        </div>
+        <%= f.label :photo, class: 'require' %>
+        <%= f.file_field :photo, accept: 'image/*' %>
+        <%= f.hidden_field :photo_cache %>
+        <p class="margin-left-1_6">※jpg, jpeg, png, webp</p>
+      </div>
+      <div>
+        <%= f.label :title, class: 'require' %>
+        <%= f.text_field :title %>
+      </div>
+      <div>
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+      </div>
+      <div class="block text-center">
+        <%= f.submit t('helpers.submit.update') %>
+      </div>
+    <% end %>
+  </section>
+</article>

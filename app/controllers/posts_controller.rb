@@ -21,6 +21,20 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
   end
 
+  def edit
+    @post = Post.find_by(id: params[:id])
+  end
+
+  def update
+    @post = Post.find_by(id: params[:id])
+
+    if @post.update(post_params)
+      redirect_to post_path(id: params[:id])
+    else
+      render 'edit', status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy

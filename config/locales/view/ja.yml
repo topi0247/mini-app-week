@@ -43,6 +43,8 @@ ja:
       title: アルバム一覧
       no_post_comment: まだ投稿されてないようです
       require_post: さっそく投稿しましょう！
+    edit:
+      title: アルバム編集
   date:
     formats:
       default: "%Y-%m-%d"
