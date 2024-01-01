@@ -8,9 +8,8 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
-  # config.fog_directory = 'mini-app-week' if Rails.env.production?
-  # config.fog_directory = 'mini-app-week' if Rails.env.development?
-  config.fog_directory = 'mini-app-week'
+  config.fog_directory = 'mini-app-week' if Rails.env.production?
+  config.fog_directory = 'mini-app-week-dev' if Rails.env.development?
   config.fog_public = false
   config.fog_authenticated_url_expiration = 60
 end
