@@ -5,20 +5,12 @@
     <%= form_with model: @post do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div>
-        <%
-=begin%>
- <div id="photo-prev">
+        <div id="photo-prev">
           <%= image_tag(@post.photo.url) if @post.photo? %>
-        </div> 
-<%
-=end%>
+        </div>
         <%= f.label :photo, class: 'require' %>
         <%= f.file_field :photo, accept: 'image/*' %>
-        <%
-=begin%>
- <%= f.hidden_field :photo_cache %> 
-<%
-=end%>
+        <%= f.hidden_field :photo_cache %>
         <p class="margin-left-1_6">※jpg, jpeg, png, webp</p>
       </div>
       <div>
