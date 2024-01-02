@@ -10,8 +10,8 @@
           <%= post.user.nickname %>
         <% end %>
       </div>
-      <%= simple_format post.body %>
-      <%= simple_format l(post.created_at,format: :long), class: 'day' %>
+      <%= simple_format post.body if post.body.present? %>
+      <%= simple_format l(post.created_at,format: :long), class: 'day text-right' %>
     </div>
     <%= image_tag 'tape.png', class: 'tape' %>
   </section>

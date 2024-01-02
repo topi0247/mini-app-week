@@ -2,7 +2,9 @@
 <article>
 <h2><span><%= t('.title') %></span></h2>
   <section class="show border-none">
-    <%= image_tag @post.photo.url %>
+    <%= link_to @post.photo.url, class: 'spotlight' do %>
+      <%= image_tag @post.photo.url %>
+    <% end %>
     <div class="bodys">
       <h3><%= @post.title %></h3>
       <div class="text-right margin-right-1_6">
