@@ -35,11 +35,23 @@
             <div class="body">
               <h4><%= link_to post.title, post_path(post.id) %></h4>
               <%= simple_format post.body if post.body.present? %>
-              <div class="text-right">
-                <%= simple_format(t('.is_public'), class: 'is_public_tag') if post.is_public? %>
-                <%= simple_format(t('.is_private'), class: 'is_private_tag') unless post.is_public? %>
-              </div>
-              <%= simple_format l(post.created_at, format: :long), class: 'text-right' %>
+              <% if @user == current_user %>
+                <div class="text-right">
+                  <%= simple_format(t('.is_public'), class: 'is_public_tag') if post.is_public? %>
+                  <%= simple_format(t('.is_private'), class: 'is_private_tag') unless post.is_public? %>
+                </div>
+              <% end %>
+              <%= simple_format l(post.created_at, format: :long), class: 'day text-right' %>
+              <% if @user == current_user %>
+                <div class="text-right">
+                  <%= link_to edit_post_path(id: post.id) do %>
+                    <span class="material-symbols-outlined">edit_note</span>
+                  <% end %>
+                  <%= link_to post, data: { turbo_method: :delete } do %>
+                    <span class="material-symbols-outlined">delete</span>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
             <%= image_tag 'tape.png', class: 'tape' %>
           </section>
