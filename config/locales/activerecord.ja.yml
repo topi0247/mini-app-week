@@ -15,4 +15,4 @@ ja:
         title: タイトル
         body: 本文
         photo: 写真
-        public: 全体公開する
+        is_public: 全体公開する

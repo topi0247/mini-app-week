@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:user)
+    @posts = Post.includes(:user).where(is_public: true)
   end
 
   def new
@@ -26,9 +26,10 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find_by(id: params[:id])
+    post = Post.find_by(id: params[:id])
+    post[:is_public] = false unless post.respond_to? :is_public
 
-    if @post.update(post_params)
+    if post.update(post_params)
       redirect_to post_path(id: params[:id])
     else
       render 'edit', status: :unprocessable_entity

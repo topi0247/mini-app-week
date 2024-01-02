@@ -22,8 +22,8 @@
         <%= f.text_area :body %>
       </div>
       <div class="block text-center">
-        <%= f.check_box :public %>
-        <%= f.label :public, id: 'post_public_label' %>
+        <%= f.check_box :is_public %>
+        <%= f.label :is_public, id: 'post_public_label' %>
         <%= f.submit t('helpers.submit.update') %>
       </div>
     <% end %>

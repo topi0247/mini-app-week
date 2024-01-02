@@ -8,7 +8,9 @@
     <div class="body">
       <div class="text-center">
         <h4><%= @user.nickname %></h4>
-        <%= simple_format @user.decorate.full_name %>
+        <% if @user == current_user %>
+          <%= simple_format @user.decorate.full_name %>
+        <% end %>
       </div>
       <p><%= @user.profile || "no profile" %></p>
       <% if @user == current_user %>

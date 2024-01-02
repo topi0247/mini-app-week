@@ -1,13 +1,12 @@
-<% if post.is_public? %>
-  <section class="content">
+<section class="content">
     <%= link_to post_path(post.id) do %>
       <%= image_tag post.photo.url %>
     <% end %>
     <div class="body">
       <h4><%= link_to post.title, post_path(post.id) %></h4>
+      <div class="text-right"><%= link_to post.user.nickname, user_path(post.user.id) %></div>
       <%= simple_format post.body %>
       <%= simple_format l(post.created_at,format: :long), class: 'day' %>
     </div>
     <%= image_tag 'tape.png', class: 'tape' %>
   </section>
-<% end %>
