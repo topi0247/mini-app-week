@@ -351,6 +351,7 @@ section.show {
 
 section.content {
   width: calc(25% - 10px);
+  max-width: 300px;
   margin: 5px;
   position: relative;
   padding: 0;
@@ -560,6 +561,10 @@ footer {
     margin-bottom: 100px;
   }
 
+  main:has(#top){
+    margin: 0;
+  }
+
   header {
     display: block;
     text-align: center;
@@ -605,6 +610,7 @@ footer {
 
   .row_show {
     display: block;
+    margin: 10px 20px;
   }
 
   section.content {
@@ -614,6 +620,11 @@ footer {
 
   #top {
     height: 100vh;
+    margin: 0;
+    h2 {
+      font-size: calc(1.6rem * 1.5);
+      font-weight: bold;
+    }
     .bg {
       top: 0;
     }
