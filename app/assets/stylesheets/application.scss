@@ -356,6 +356,24 @@ section.content {
       white-space: nowrap;
       position: relative;
     }
+
+    .is_public_tag,.is_private_tag {
+      display: inline;
+      text-align: end;
+      font-size: 1.3rem;
+      border-radius: 10px;
+      padding: 3px 5px;
+    }
+
+    .is_public_tag {
+      background-color: var(--theme-color1);
+      border: 1px solid #ffc096;
+    }
+
+    .is_private_tag {
+      background-color: rgba(155, 155, 155, 0.397);
+      border: 1px solid #3d3d3d;
+    }
   }
 
   .tape {
@@ -375,10 +393,6 @@ img.avatar-icon {
   width: 100%;
   border-radius: 50%;
   object-fit: contain;
-}
-
-.day {
-  text-align: end;
 }
 
 .profile {

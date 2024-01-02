@@ -25,6 +25,8 @@ ja:
     show:
       title: マイページ
       to_edit: 編集
+      is_public: 全体公開
+      is_private: 非公開
     edit:
       title: マイページ編集
   header:
