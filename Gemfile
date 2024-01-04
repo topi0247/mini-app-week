@@ -97,3 +97,7 @@ gem 'carrierwave-i18n'
 gem 'aws-sdk-s3', require: false
 
 gem 'fog-aws'
+
+group :production do
+  gem 'pg'
+end
