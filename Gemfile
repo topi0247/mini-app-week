@@ -80,7 +80,7 @@ gem 'sorcery'
 
 gem 'carrierwave'
 
-gem "jquery-rails"
+gem 'jquery-rails'
 
 gem 'dotenv'
 
@@ -98,6 +98,4 @@ gem 'aws-sdk-s3', require: false
 
 gem 'fog-aws'
 
-group :production do
-  gem 'pg'
-end
+gem 'pg'
