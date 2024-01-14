@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
+  before_action :set_user, only: %i[edit update destroy]
 
   def new
     @user = User.new
@@ -10,40 +11,50 @@ class UsersController < ApplicationController
 
     if @user.save
       login(@user.email, @user.password)
+      # TODO: フラッシュメッセージを表示する
       redirect_to posts_path
     else
+      # TODO: フラッシュメッセージを表示する
       render 'new', status: :unprocessable_entity
     end
   end
 
   def show
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
   end
 
-  def edit
-    @user = current_user
-  end
+  # TODO: ログインしているユーザーのみがアクセスできるようにする
+  def edit; end
 
+  # TODO: ログインしているユーザーのみがアクセスできるようにする
   def update
-    @user = current_user
-
     if @user.update(user_params)
+      # TODO: フラッシュメッセージを表示する
       redirect_to user_path(id: params[:id])
     else
+      # TODO: フラッシュメッセージを表示する
       render 'edit', status: :unprocessable_entity
     end
   end
 
+  # TODO: ログインしているユーザーのみがアクセスできるようにする
   def destroy
-    @user = current_user
-    @user.destroy
-
-    redirect_to root_path, status: :see_other
+    if @user.destroy
+      # TODO: フラッシュメッセージを表示する
+      redirect_to root_path, status: :see_other
+    else
+      # TODO: フラッシュメッセージを表示する
+      redirect_to root_path, status: :unprocessable_entity
+    end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:last_name, :first_name, :nickname, :profile, :email, :password, :password_confirmation, :avatar, :avatar_cache) # rubocop:disable Layout/LineLength
+    params.require(:user).permit(:last_name, :first_name, :nickname, :profile, :email, :password, :password_confirmation, :avatar, :avatar_cache)
+  end
+
+  def set_user
+    @user = current_user
   end
 end
