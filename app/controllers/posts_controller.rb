@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
 
   def index
-    @posts = Post.includes(:user).where(is_public: true)
+    @posts = Post.includes(:user).where(is_public: true).order(created_at: :desc)
   end
 
   def new
